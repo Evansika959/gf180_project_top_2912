@@ -1,0 +1,2772 @@
+{
+  "creator": "Yosys 0.54 (git sha1 db72ec3bde296a9512b2d1e6fabf81cfb07c2c1b, clang++ 19.1.7 -fPIC -O3)",
+  "modules": {
+    "chip_top": {
+      "attributes": {
+        "hdlname": "chip_top",
+        "dynports": "00000000000000000000000000000001",
+        "top": "00000000000000000000000000000001",
+        "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:6.1-315.10"
+      },
+      "parameter_default_values": {
+        "NUM_BIDIR": "00000000000000000000000000101010",
+        "NUM_INPUT": "00000000000000000000000000001100"
+      },
+      "ports": {
+        "VDD": {
+          "direction": "inout",
+          "bits": [ 2 ]
+        },
+        "VSS": {
+          "direction": "inout",
+          "bits": [ 3 ]
+        },
+        "clk_PAD": {
+          "direction": "inout",
+          "bits": [ 4 ]
+        },
+        "rst_n_PAD": {
+          "direction": "inout",
+          "bits": [ 5 ]
+        },
+        "input_PAD": {
+          "direction": "inout",
+          "bits": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ]
+        },
+        "bidir_PAD": {
+          "direction": "inout",
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ]
+        }
+      },
+      "cells": {
+        "$flatten\\i_chip_core.$add$/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:48$7": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000101010",
+            "B_SIGNED": "00000000000000000000000000000000",
+            "B_WIDTH": "00000000000000000000000000100000",
+            "Y_WIDTH": "00000000000000000000000000101010"
+          },
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:48.26-48.35"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101 ],
+            "B": [ "1", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "Y": [ 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143 ]
+          }
+        },
+        "$flatten\\i_chip_core.$procdff$13": {
+          "hide_name": 1,
+          "type": "$dff",
+          "parameters": {
+            "CLK_POLARITY": "1",
+            "WIDTH": "00000000000000000000000000101010"
+          },
+          "attributes": {
+            "always_ff": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:43.5-51.8"
+          },
+          "port_directions": {
+            "CLK": "input",
+            "D": "input",
+            "Q": "output"
+          },
+          "connections": {
+            "CLK": [ 144 ],
+            "D": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186 ],
+            "Q": [ 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101 ]
+          }
+        },
+        "$flatten\\i_chip_core.$procmux$11": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000101010"
+          },
+          "attributes": {
+            "full_case": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:44.13-44.19|/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:44.9-50.12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0", "0" ],
+            "B": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228 ],
+            "S": [ 229 ],
+            "Y": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186 ]
+          }
+        },
+        "$flatten\\i_chip_core.$procmux$8": {
+          "hide_name": 1,
+          "type": "$mux",
+          "parameters": {
+            "WIDTH": "00000000000000000000000000101010"
+          },
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:47.17-47.26|/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:47.13-49.16"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101 ],
+            "B": [ 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143 ],
+            "S": [ 230 ],
+            "Y": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228 ]
+          }
+        },
+        "$flatten\\i_chip_core.$reduce_and$/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:47$6": {
+          "hide_name": 1,
+          "type": "$reduce_and",
+          "parameters": {
+            "A_SIGNED": "00000000000000000000000000000000",
+            "A_WIDTH": "00000000000000000000000000001100",
+            "Y_WIDTH": "00000000000000000000000000000001"
+          },
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:47.17-47.26"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242 ],
+            "Y": [ 230 ]
+          }
+        },
+        "bidir[0].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 60 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 18 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 243 ]
+          }
+        },
+        "bidir[10].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 70 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 28 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 244 ]
+          }
+        },
+        "bidir[11].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 71 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 29 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 245 ]
+          }
+        },
+        "bidir[12].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 72 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 30 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 246 ]
+          }
+        },
+        "bidir[13].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 73 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 31 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 247 ]
+          }
+        },
+        "bidir[14].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 74 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 32 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 248 ]
+          }
+        },
+        "bidir[15].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 75 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 33 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 249 ]
+          }
+        },
+        "bidir[16].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 76 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 34 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 250 ]
+          }
+        },
+        "bidir[17].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 77 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 35 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 251 ]
+          }
+        },
+        "bidir[18].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 78 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 36 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 252 ]
+          }
+        },
+        "bidir[19].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 79 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 37 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 253 ]
+          }
+        },
+        "bidir[1].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 61 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 19 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 254 ]
+          }
+        },
+        "bidir[20].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 80 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 38 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 255 ]
+          }
+        },
+        "bidir[21].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 81 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 39 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 256 ]
+          }
+        },
+        "bidir[22].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 82 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 40 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 257 ]
+          }
+        },
+        "bidir[23].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 83 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 41 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 258 ]
+          }
+        },
+        "bidir[24].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 84 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 42 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 259 ]
+          }
+        },
+        "bidir[25].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 85 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 43 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 260 ]
+          }
+        },
+        "bidir[26].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 86 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 44 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 261 ]
+          }
+        },
+        "bidir[27].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 87 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 45 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 262 ]
+          }
+        },
+        "bidir[28].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 88 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 46 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 263 ]
+          }
+        },
+        "bidir[29].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 89 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 47 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 264 ]
+          }
+        },
+        "bidir[2].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 62 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 20 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 265 ]
+          }
+        },
+        "bidir[30].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 90 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 48 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 266 ]
+          }
+        },
+        "bidir[31].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 91 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 49 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 267 ]
+          }
+        },
+        "bidir[32].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 92 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 50 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 268 ]
+          }
+        },
+        "bidir[33].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 93 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 51 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 269 ]
+          }
+        },
+        "bidir[34].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 94 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 52 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 270 ]
+          }
+        },
+        "bidir[35].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 95 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 53 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 271 ]
+          }
+        },
+        "bidir[36].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 96 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 54 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 272 ]
+          }
+        },
+        "bidir[37].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 97 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 55 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 273 ]
+          }
+        },
+        "bidir[38].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 98 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 56 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 274 ]
+          }
+        },
+        "bidir[39].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 99 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 57 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 275 ]
+          }
+        },
+        "bidir[3].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 63 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 21 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 276 ]
+          }
+        },
+        "bidir[40].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 100 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 58 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 277 ]
+          }
+        },
+        "bidir[41].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 101 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 59 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 278 ]
+          }
+        },
+        "bidir[4].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 64 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 22 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 279 ]
+          }
+        },
+        "bidir[5].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 65 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 23 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 280 ]
+          }
+        },
+        "bidir[6].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 66 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 24 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 281 ]
+          }
+        },
+        "bidir[7].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 67 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 25 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 282 ]
+          }
+        },
+        "bidir[8].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 68 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 26 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 283 ]
+          }
+        },
+        "bidir[9].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__bi_24t",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:261.32-280.10"
+          },
+          "port_directions": {
+            "A": "input",
+            "CS": "input",
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "IE": "input",
+            "OE": "input",
+            "PAD": "inout",
+            "PD": "input",
+            "PU": "input",
+            "SL": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 69 ],
+            "CS": [ "0" ],
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "IE": [ "0" ],
+            "OE": [ "1" ],
+            "PAD": [ 27 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "SL": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 284 ]
+          }
+        },
+        "chip_id": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_ip__id",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:309.24-309.34"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        },
+        "clk_pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_s",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:209.26-222.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 4 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 144 ]
+          }
+        },
+        "dvdd_east_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:61.26-67.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_east_1": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:79.26-85.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_east_2": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:97.26-103.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_east_3": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:115.26-121.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_west_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:135.26-141.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_west_1": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:153.26-159.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_west_2": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:180.26-186.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvdd_west_3": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvdd",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:198.26-204.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VSS": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VSS": [ 3 ]
+          }
+        },
+        "dvss_east_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:52.26-58.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_east_1": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:70.26-76.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_east_2": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:88.26-94.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_east_3": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:106.26-112.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_north_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:125.26-131.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_south_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:42.26-48.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_west_0": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:144.26-150.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_west_1": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:162.26-168.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_west_2": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:171.26-177.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "dvss_west_3": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_io__dvss",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:189.26-195.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "VDD": "inout"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "VDD": [ 2 ]
+          }
+        },
+        "inputs[0].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 6 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 231 ]
+          }
+        },
+        "inputs[10].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 16 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 241 ]
+          }
+        },
+        "inputs[11].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 17 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 242 ]
+          }
+        },
+        "inputs[1].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 7 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 232 ]
+          }
+        },
+        "inputs[2].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 8 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 233 ]
+          }
+        },
+        "inputs[3].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 9 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 234 ]
+          }
+        },
+        "inputs[4].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 10 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 235 ]
+          }
+        },
+        "inputs[5].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 11 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 236 ]
+          }
+        },
+        "inputs[6].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 12 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 237 ]
+          }
+        },
+        "inputs[7].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 13 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 238 ]
+          }
+        },
+        "inputs[8].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 14 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 239 ]
+          }
+        },
+        "inputs[9].pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:242.30-255.10"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 15 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 240 ]
+          }
+        },
+        "rst_n_pad": {
+          "hide_name": 0,
+          "type": "gf180mcu_fd_io__in_c",
+          "parameters": {
+          },
+          "attributes": {
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:225.26-238.6"
+          },
+          "port_directions": {
+            "DVDD": "inout",
+            "DVSS": "inout",
+            "PAD": "input",
+            "PD": "input",
+            "PU": "input",
+            "VDD": "inout",
+            "VSS": "inout",
+            "Y": "output"
+          },
+          "connections": {
+            "DVDD": [ 2 ],
+            "DVSS": [ 3 ],
+            "PAD": [ 5 ],
+            "PD": [ "0" ],
+            "PU": [ "0" ],
+            "VDD": [ 2 ],
+            "VSS": [ 3 ],
+            "Y": [ 229 ]
+          }
+        },
+        "wafer_space_logo": {
+          "hide_name": 0,
+          "type": "gf180mcu_ws_ip__logo",
+          "parameters": {
+          },
+          "attributes": {
+            "keep": "00000000000000000000000000000001",
+            "module_not_derived": "00000000000000000000000000000001",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:313.26-313.45"
+          },
+          "port_directions": {
+          },
+          "connections": {
+          }
+        }
+      },
+      "netnames": {
+        "$flatten\\i_chip_core.$0\\count[41:0]": {
+          "hide_name": 1,
+          "bits": [ 145, 146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:43.5-51.8"
+          }
+        },
+        "$flatten\\i_chip_core.$add$/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:48$7_Y": {
+          "hide_name": 1,
+          "bits": [ 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:48.26-48.35"
+          }
+        },
+        "$flatten\\i_chip_core.$procmux$8_Y": {
+          "hide_name": 1,
+          "bits": [ 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209, 210, 211, 212, 213, 214, 215, 216, 217, 218, 219, 220, 221, 222, 223, 224, 225, 226, 227, 228 ],
+          "attributes": {
+          }
+        },
+        "$flatten\\i_chip_core.$procmux$9_CMP": {
+          "hide_name": 1,
+          "bits": [ 230 ],
+          "attributes": {
+          }
+        },
+        "VDD": {
+          "hide_name": 0,
+          "bits": [ 2 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:11.16-11.19"
+          }
+        },
+        "VSS": {
+          "hide_name": 0,
+          "bits": [ 3 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:12.16-12.19"
+          }
+        },
+        "bidir_CORE2PAD": {
+          "hide_name": 0,
+          "bits": [ 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:30.26-30.40"
+          }
+        },
+        "bidir_PAD": {
+          "hide_name": 0,
+          "bits": [ 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:19.33-19.42"
+          }
+        },
+        "bidir_PAD2CORE": {
+          "hide_name": 0,
+          "bits": [ 243, 254, 265, 276, 279, 280, 281, 282, 283, 284, 244, 245, 246, 247, 248, 249, 250, 251, 252, 253, 255, 256, 257, 258, 259, 260, 261, 262, 263, 264, 266, 267, 268, 269, 270, 271, 272, 273, 274, 275, 277, 278 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:29.26-29.40",
+            "unused_bits": "0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41"
+          }
+        },
+        "clk_PAD": {
+          "hide_name": 0,
+          "bits": [ 4 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:15.23-15.30"
+          }
+        },
+        "clk_PAD2CORE": {
+          "hide_name": 0,
+          "bits": [ 144 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:22.10-22.22"
+          }
+        },
+        "i_chip_core.input_in": {
+          "hide_name": 0,
+          "bits": [ 231, 232, 233, 234, 235, 236, 237, 238, 239, 240, 241, 242 ],
+          "attributes": {
+            "hdlname": "i_chip_core input_in",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:13.33-13.41"
+          }
+        },
+        "i_chip_core.rst_n": {
+          "hide_name": 0,
+          "bits": [ 229 ],
+          "attributes": {
+            "hdlname": "i_chip_core rst_n",
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_core.sv:11.18-11.23"
+          }
+        },
+        "input_PAD": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:18.33-18.42"
+          }
+        },
+        "rst_n_PAD": {
+          "hide_name": 0,
+          "bits": [ 5 ],
+          "attributes": {
+            "src": "/Users/evansjiang/Desktop/Work/repos/gf180mcu-project-template/src/chip_top.sv:16.23-16.32"
+          }
+        }
+      }
+    }
+  }
+}
