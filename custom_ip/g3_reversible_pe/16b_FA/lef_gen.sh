@@ -1,1 +1,1 @@
-magic -T /foss/pdks/gf180mcuD/libs.tech/magic/gf180mcuD.tech 16b_FA.gds
+magic -T /foss/pdks/gf180mcuD/libs.tech/magic/gf180mcuD.tech fa16b_rev.gds
