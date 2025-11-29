@@ -1,5 +1,5 @@
 ** sch_path: /foss/designs/final_project/devices/16b_FA/16b_FA.sch
-.subckt 16b_FA vss vdd c15 c15_not c0_f_not a0_f c0_f b0 a0_f_not b1_not b0_not b1 a1_not b2_not a1 b2 a2_not b3_not a2 b3 a3_not
+.subckt fa16b_rev vss vdd c15 c15_not c0_f_not a0_f c0_f b0 a0_f_not b1_not b0_not b1 a1_not b2_not a1 b2 a2_not b3_not a2 b3 a3_not
 + b4_not a3 b4 a4_not b5_not a4 b5 a5_not b6_not a5 b6 a6_not b7_not a6 b7 a7_not a7 a7_b s7 a7_not_b s7_not a6_b s6 a6_not_b s6_not a5_b
 + s5 a5_not_b s5_not a4_b s4 a4_not_b s4_not a3_b s3 a3_not_b s3_not a2_b s2 a2_not_b s2_not a1_b s1 a1_not_b s1_not a0_b s0 a0_not_b
 + s0_not c0_b c0_not_b b8_not a8_not b8 a8 b9_not a9_not b9 a9 b10_not a10_not b10 a10 b11_not a11_not b11 a11 b12_not a12_not b12 a12
