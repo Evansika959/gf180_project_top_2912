@@ -1,145 +1,196 @@
-** sch_path: /foss/designs/final_project/devices/16b_FA/16b_FA.sch
-.subckt fa16b_rev vss vdd c15 c15_not c0_f_not a0_f c0_f b0 a0_f_not b1_not b0_not b1 a1_not b2_not a1 b2 a2_not b3_not a2 b3 a3_not
-+ b4_not a3 b4 a4_not b5_not a4 b5 a5_not b6_not a5 b6 a6_not b7_not a6 b7 a7_not a7 a7_b s7 a7_not_b s7_not a6_b s6 a6_not_b s6_not a5_b
-+ s5 a5_not_b s5_not a4_b s4 a4_not_b s4_not a3_b s3 a3_not_b s3_not a2_b s2 a2_not_b s2_not a1_b s1 a1_not_b s1_not a0_b s0 a0_not_b
-+ s0_not c0_b c0_not_b b8_not a8_not b8 a8 b9_not a9_not b9 a9 b10_not a10_not b10 a10 b11_not a11_not b11 a11 b12_not a12_not b12 a12
-+ b13_not a13_not b13 a13 b14_not a14_not b14 a14 b15_not a15_not b15 a15 a15_b s15 s15_not a14_b s14 a14_not_b s14_not a13_b s13 a13_not_b
-+ s13_not a12_b s12 a12_not_b s12_not a11_b s11 a11_not_b s11_not a10_b s10 a10_not_b s10_not a9_b s9 a9_not_b s9_not a8_b s8 a8_not_b
-+ s8_not a15_not_b z_not z
-*.PININFO vss:B vdd:B c15:B c15_not:B c0_f_not:B a0_f:B c0_f:B b0:B a0_f_not:B b1_not:B b0_not:B b1:B a1_not:B b2_not:B a1:B b2:B
-*+ a2_not:B b3_not:B a2:B b3:B a3_not:B b4_not:B a3:B b4:B a4_not:B b5_not:B a4:B b5:B a5_not:B b6_not:B a5:B b6:B a6_not:B b7_not:B a6:B
-*+ b7:B a7_not:B a7:B a7_b:B s7:B a7_not_b:B s7_not:B a6_b:B s6:B a6_not_b:B s6_not:B a5_b:B s5:B a5_not_b:B s5_not:B a4_b:B s4:B
-*+ a4_not_b:B s4_not:B a3_b:B s3:B a3_not_b:B s3_not:B a2_b:B s2:B a2_not_b:B s2_not:B a1_b:B s1:B a1_not_b:B s1_not:B a0_b:B s0:B a0_not_b:B
-*+ s0_not:B c0_b:B c0_not_b:B b8_not:B a8_not:B b8:B a8:B b9_not:B a9_not:B b9:B a9:B b10_not:B a10_not:B b10:B a10:B b11_not:B a11_not:B
-*+ b11:B a11:B b12_not:B a12_not:B b12:B a12:B b13_not:B a13_not:B b13:B a13:B b14_not:B a14_not:B b14:B a14:B b15_not:B a15_not:B b15:B
-*+ a15:B a15_b:B s15:B s15_not:B a14_b:B s14:B a14_not_b:B s14_not:B a13_b:B s13:B a13_not_b:B s13_not:B a12_b:B s12:B a12_not_b:B
-*+ s12_not:B a11_b:B s11:B a11_not_b:B s11_not:B a10_b:B s10:B a10_not_b:B s10_not:B a9_b:B s9:B a9_not_b:B s9_not:B a8_b:B s8:B a8_not_b:B
-*+ s8_not:B a15_not_b:B z_not:B z:B
-M1 z_not net3 c15 vss nfet_03v3 L=0.55u W=1.37u nf=1 m=1
-M2 z_not net4 c15 vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M3 c15 net4 z vss nfet_03v3 L=0.55u W=1.415u nf=1 m=1
-M4 c15 net3 z vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M5 z net3 c15_not vss nfet_03v3 L=0.55u W=1.365u nf=1 m=1
-M6 z net4 c15_not vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M7 c15_not net4 z_not vss nfet_03v3 L=0.55u W=1.385u nf=1 m=1
-M8 c15_not net3 z_not vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-x1 vdd vss c0_f c0_b c0_f_not c0_not_b s0 b0 s0_not b0_not a0_f a0_b a0_not_b a0_f_not b1 s1 b1_not s1_not a1 a1_b a1_not a1_not_b
-+ s2 b2 s2_not b2_not a2_b a2 a2_not a2_not_b s3 b3 s3_not b3_not a3_b a3 a3_not a3_not_b s4 b4 b4_not s4_not a4_b a4 a4_not_b a4_not
-+ b5 s5 b5_not s5_not a5 a5_b a5_not_b a5_not b6 s6 b6_not s6_not a6 a6_b a6_not_b a6_not s7 b7 b7_not s7_not a7_b a7 a7_not_b a7_not
-+ net1 net2 net5 net6 8b_FA_ripple
-x2 vdd vss net1 net5 net2 net6 s8 b8 s8_not b8_not a8 a8_b a8_not_b a8_not b9 s9 b9_not s9_not a9 a9_b a9_not a9_not_b s10 b10
-+ s10_not b10_not a10_b a10 a10_not a10_not_b s11 b11 s11_not b11_not a11_b a11 a11_not a11_not_b s12 b12 b12_not s12_not a12_b a12
-+ a12_not_b a12_not b13 s13 b13_not s13_not a13 a13_b a13_not_b a13_not b14 s14 b14_not s14_not a14 a14_b a14_not_b a14_not s15 b15 b15_not
-+ s15_not a15_b a15 a15_not_b a15_not net3 net4 net3 net4 8b_FA_ripple
+* NGSPICE file created from fa16b_rev.ext - technology: gf180mcuD
+
+.subckt pfet$1 a_28_144# w_n180_n88# a_n92_0# a_94_0#
+X0 a_94_0# a_28_144# a_n92_0# w_n180_n88# pfet_03v3 ad=0.273p pd=2.14u as=0.273p ps=2.14u w=0.42u l=0.28u
 .ends
 
-* expanding   symbol:  final_project/devices/8b_FA_ripple/8b_FA_ripple.sym # of pins=74
-** sym_path: /foss/designs/final_project/devices/8b_FA_ripple/8b_FA_ripple.sym
-** sch_path: /foss/designs/final_project/devices/8b_FA_ripple/8b_FA_ripple.sch
-.subckt 8b_FA_ripple vdd vss c0_f c0_b c0_not_f c0_not_b s0 b0 s0_not b0_not a0_f a0_b a0_not_b a0_not_f b1 s1 b1_not s1_not a1_f
-+ a1_b a1_not_f a1_not_b s2 b2 s2_not b2_not a2_b a2_f a2_not_f a2_not_b s3 b3 s3_not b3_not a3_b a3_f a3_not_f a3_not_b s4 b4 b4_not
-+ s4_not a4_b a4_f a4_not_b a4_not_f b5 s5 b5_not s5_not a5_f a5_b a5_not_b a5_not_f b6 s6 b6_not s6_not a6_f a6_b a6_not_b a6_not_f s7 b7
-+ b7_not s7_not a7_b a7_f a7_not_b a7_not_f r7_maj r7_maj_not r7_uma r7_uma_not
-*.PININFO c0_f:B c0_not_f:B b0:B b0_not:B a0_f:B a0_not_f:B b7:B b7_not:B a7_f:B a7_not_f:B b1:B b1_not:B a1_f:B a1_not_f:B vdd:B
-*+ vss:B b2:B b2_not:B a2_f:B a2_not_f:B b3:B b3_not:B a3_f:B a3_not_f:B b6:B b6_not:B a6_f:B a6_not_f:B b5:B b5_not:B a5_f:B a5_not_f:B
-*+ b4:B b4_not:B a4_f:B a4_not_f:B a1_not_b:B a1_b:B s1_not:B s1:B a0_not_b:B a0_b:B s0_not:B s0:B c0_not_b:B c0_b:B a2_not_b:B a2_b:B
-*+ s2_not:B s2:B a3_not_b:B a3_b:B s3_not:B s3:B a4_not_b:B a4_b:B s4_not:B s4:B a5_not_b:B a5_b:B s5_not:B s5:B a6_not_b:B a6_b:B s6_not:B
-*+ s6:B a7_not_b:B a7_b:B s7_not:B s7:B r7_maj:B r7_maj_not:B r7_uma:B r7_uma_not:B
-x1 vdd vss c0_f c0_not_f b0 b0_not a0_f net1 net2 a0_not_f net43 net44 net45 net46 MAJ
-x2 vdd vss net2 net1 b1 b1_not a1_f net4 net3 a1_not_f net39 net40 net41 net42 MAJ
-x3 vdd vss net3 net4 b2 b2_not a2_f net6 net5 a2_not_f net35 net36 net37 net38 MAJ
-x4 vdd vss net5 net6 b3 b3_not a3_f net7 net8 a3_not_f net31 net32 net33 net34 MAJ
-x5 vdd vss net8 net7 b4 b4_not a4_f net10 net9 a4_not_f net27 net28 net29 net30 MAJ
-x6 vdd vss net9 net10 b5 b5_not a5_f net12 net11 a5_not_f net23 net24 net25 net26 MAJ
-x7 vdd vss net11 net12 b6 b6_not a6_f net13 net14 a6_not_f net19 net20 net21 net22 MAJ
-x8 vdd vss net14 net13 b7 b7_not a7_f r7_maj_not r7_maj a7_not_f net18 net17 net16 net15 MAJ
-x11 vdd vss net26 net52 net51 net25 net24 s5 net23 s5_not net50 net49 a5_b a5_not_b UMA
-x12 vdd vss net30 net54 net53 net29 net28 s4 net27 s4_not net52 net51 a4_b a4_not_b UMA
-x13 vdd vss net34 net56 net55 net33 net32 s3 net31 s3_not net54 net53 a3_b a3_not_b UMA
-x14 vdd vss net38 net58 net57 net37 net36 s2 net35 s2_not net56 net55 a2_b a2_not_b UMA
-x15 vdd vss net42 net59 net60 net41 net40 s1 net39 s1_not net58 net57 a1_b a1_not_b UMA
-x16 vdd vss net46 c0_b c0_not_b net45 net44 s0 net43 s0_not net59 net60 a0_b a0_not_b UMA
-x9 vdd vss net15 net48 net47 net16 net17 s7 net18 s7_not r7_uma r7_uma_not a7_b a7_not_b UMA
-x10 vdd vss net22 net50 net49 net21 net20 s6 net19 s6_not net48 net47 a6_b a6_not_b UMA
+.subckt nfet$1$1 a_n84_0# a_94_0# a_30_144# VSUBS
+X0 a_94_0# a_30_144# a_n84_0# VSUBS nfet_03v3 ad=0.2562p pd=2.06u as=0.2562p ps=2.06u w=0.42u l=0.28u
 .ends
 
-
-* expanding   symbol:  final_project/devices/MAJ/MAJ.sym # of pins=14
-** sym_path: /foss/designs/final_project/devices/MAJ/MAJ.sym
-** sch_path: /foss/designs/final_project/devices/MAJ/MAJ.sch
-.subckt MAJ vdd vss c_i c_not_i b_i b_not_i a_i r_not_i r_i a_not_i q_not_i q_i p_not_i p_i
-*.PININFO c_not_i:B b_i:B a_i:B a_not_i:B b_not_i:B c_i:B p_not_i:B q_i:B r_i:B r_not_i:B q_not_i:B p_i:B vss:B vdd:B
-M1 b_not_i a_i q_i vss nfet_03v3 L=0.55u W=1.37u nf=1 m=1
-M2 b_not_i a_not_i q_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M3 q_i a_not_i b_i vss nfet_03v3 L=0.55u W=1.415u nf=1 m=1
-M4 q_i a_i b_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M5 b_i a_i q_not_i vss nfet_03v3 L=0.55u W=1.365u nf=1 m=1
-M6 b_i a_not_i q_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M7 q_not_i a_not_i b_not_i vss nfet_03v3 L=0.55u W=1.385u nf=1 m=1
-M8 q_not_i a_i b_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M9 c_not_i a_i p_i vss nfet_03v3 L=0.55u W=1.37u nf=1 m=1
-M10 c_not_i a_not_i p_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M11 p_i a_not_i c_i vss nfet_03v3 L=0.55u W=1.415u nf=1 m=1
-M12 p_i a_i c_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M13 c_i a_i p_not_i vss nfet_03v3 L=0.55u W=1.365u nf=1 m=1
-M14 c_i a_not_i p_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M15 p_not_i a_not_i c_not_i vss nfet_03v3 L=0.55u W=1.385u nf=1 m=1
-M16 p_not_i a_i c_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M17 a_not_i p_not_i net2 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M18 net2 q_not_i r_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M19 a_not_i q_i net1 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M20 net1 p_i r_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M21 r_i q_not_i a_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M22 r_i p_not_i a_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M23 r_i q_i a_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M24 r_i p_i a_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M25 a_i p_not_i net4 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M26 net4 q_not_i r_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M27 a_i q_i net3 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M28 net3 p_i r_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M29 r_not_i q_not_i a_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M30 r_not_i p_not_i a_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M31 r_not_i q_i a_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M32 r_not_i p_i a_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
+.subckt MAJ w_26_1560# a_551_708# a_7235_2410# a_4594_2030# a_3643_708# a_11429_1029#
++ a_639_1698# a_2043_2038# a_644_83# m1_7413_2589# a_5135_2038# a_1502_2030# pfet$1_7/VSUBS
++ a_749_2028#
+Xpfet$1_6 a_7235_2410# w_26_1560# m1_7413_2589# a_639_1698# pfet$1
+Xnfet$1$1_1 m1_7413_2589# a_639_1698# a_2043_2038# pfet$1_7/VSUBS nfet$1$1
+Xpfet$1_7 a_7235_2410# w_26_1560# a_644_83# a_11429_1029# pfet$1
+Xnfet$1$1_2 m1_8218_1029# m1_7413_2589# a_7235_2410# pfet$1_7/VSUBS nfet$1$1
+Xnfet$1$1_3 a_644_83# m1_8218_1029# a_749_2028# pfet$1_7/VSUBS nfet$1$1
+Xnfet$1$1_4 m1_10043_1029# a_639_1698# a_749_2028# pfet$1_7/VSUBS nfet$1$1
+Xnfet$1$1_5 a_11429_1029# m1_10043_1029# a_7235_2410# pfet$1_7/VSUBS nfet$1$1
+Xnfet$1$1_6 a_644_83# a_11429_1029# a_2043_2038# pfet$1_7/VSUBS nfet$1$1
+Xnfet$1$1_7 a_644_83# a_11429_1029# a_5135_2038# pfet$1_7/VSUBS nfet$1$1
+Xpfet$1_0 a_749_2028# w_26_1560# m1_7413_2589# a_639_1698# pfet$1
+Xpfet$1_1 a_2043_2038# w_26_1560# m1_8223_2129# m1_7413_2589# pfet$1
+Xpfet$1_3 a_5135_2038# w_26_1560# m1_10121_2129# a_639_1698# pfet$1
+Xpfet$1_2 a_5135_2038# w_26_1560# a_644_83# m1_8223_2129# pfet$1
+Xpfet$1_4 a_2043_2038# w_26_1560# a_11429_1029# m1_10121_2129# pfet$1
+Xpfet$1_5 a_749_2028# w_26_1560# a_644_83# a_11429_1029# pfet$1
+Xnfet$1$1_0 m1_7413_2589# a_639_1698# a_5135_2038# pfet$1_7/VSUBS nfet$1$1
+X0 a_2043_2038# a_644_83# a_1502_2030# pfet$1_7/VSUBS nfet_03v3 ad=0.64155p pd=3.67u as=0.64837p ps=3.68u w=1.365u l=0.55u
+X1 a_3643_708# a_639_1698# a_5135_2038# pfet$1_7/VSUBS nfet_03v3 ad=0.6925p pd=3.77u as=0.67172p ps=3.74u w=1.385u l=0.55u
+X2 a_4594_2030# a_644_83# a_7235_2410# w_26_1560# pfet_03v3 ad=0.60515p pd=3.45u as=0.6669p ps=3.55u w=1.235u l=0.5u
+X3 a_7235_2410# a_644_83# a_3643_708# pfet$1_7/VSUBS nfet_03v3 ad=0.6576p pd=3.7u as=0.63705p ps=3.67u w=1.37u l=0.55u
+X4 a_749_2028# a_644_83# a_551_708# pfet$1_7/VSUBS nfet_03v3 ad=0.6576p pd=3.7u as=0.63705p ps=3.67u w=1.37u l=0.55u
+X5 a_5135_2038# a_639_1698# a_4594_2030# w_26_1560# pfet_03v3 ad=0.60515p pd=3.45u as=0.64837p ps=3.52u w=1.235u l=0.5u
+X6 a_5135_2038# a_644_83# a_4594_2030# pfet$1_7/VSUBS nfet_03v3 ad=0.64155p pd=3.67u as=0.64837p ps=3.68u w=1.365u l=0.55u
+X7 a_1502_2030# a_639_1698# a_749_2028# pfet$1_7/VSUBS nfet_03v3 ad=0.65797p pd=3.76u as=0.74287p ps=3.88u w=1.415u l=0.55u
+X8 a_551_708# a_639_1698# a_2043_2038# pfet$1_7/VSUBS nfet_03v3 ad=0.6925p pd=3.77u as=0.67172p ps=3.74u w=1.385u l=0.55u
+X9 a_1502_2030# a_644_83# a_749_2028# w_26_1560# pfet_03v3 ad=0.60515p pd=3.45u as=0.6669p ps=3.55u w=1.235u l=0.5u
+X10 a_551_708# a_644_83# a_2043_2038# w_26_1560# pfet_03v3 ad=0.70395p pd=3.61u as=0.6422p ps=3.51u w=1.235u l=0.5u
+X11 a_749_2028# a_639_1698# a_551_708# w_26_1560# pfet_03v3 ad=0.6669p pd=3.55u as=0.60515p ps=3.45u w=1.235u l=0.5u
+X12 a_2043_2038# a_639_1698# a_1502_2030# w_26_1560# pfet_03v3 ad=0.60515p pd=3.45u as=0.64837p ps=3.52u w=1.235u l=0.5u
+X13 a_7235_2410# a_639_1698# a_3643_708# w_26_1560# pfet_03v3 ad=0.6669p pd=3.55u as=0.60515p ps=3.45u w=1.235u l=0.5u
+X14 a_4594_2030# a_639_1698# a_7235_2410# pfet$1_7/VSUBS nfet_03v3 ad=0.65797p pd=3.76u as=0.74287p ps=3.88u w=1.415u l=0.55u
+X15 a_3643_708# a_644_83# a_5135_2038# w_26_1560# pfet_03v3 ad=0.70395p pd=3.61u as=0.6422p ps=3.51u w=1.235u l=0.5u
 .ends
 
+.subckt pfet a_28_144# w_n180_n88# a_n92_0# a_94_0#
+X0 a_94_0# a_28_144# a_n92_0# w_n180_n88# pfet_03v3 ad=0.273p pd=2.14u as=0.273p ps=2.14u w=0.42u l=0.28u
+.ends
 
-* expanding   symbol:  final_project/devices/UMA/UMA.sym # of pins=14
-** sym_path: /foss/designs/final_project/devices/UMA/UMA.sym
-** sch_path: /foss/designs/final_project/devices/UMA/UMA.sch
-.subckt UMA vdd vss p_i c_i c_not_i p_not_i q_i s_i q_not_i s_not_i r_i r_not_i a_i a_not_i
-*.PININFO p_not_i:B q_i:B r_i:B r_not_i:B q_not_i:B p_i:B a_not_i:B a_i:B s_not_i:B c_not_i:B c_i:B s_i:B vss:B vdd:B
-M1 r_not_i p_not_i net2 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M2 net2 q_not_i a_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M3 r_not_i q_i net1 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M4 net1 p_i a_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M5 a_i q_not_i r_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M6 a_i p_not_i r_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M7 a_i q_i r_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M8 a_i p_i r_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M9 r_i p_not_i net4 vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M10 net4 q_not_i a_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M11 r_i q_i net3 vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M12 net3 p_i a_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M13 a_not_i q_not_i r_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M14 a_not_i p_not_i r_not_i vss nfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M15 a_not_i q_i r_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M16 a_not_i p_i r_not_i vdd pfet_03v3 L=0.28u W=0.42u nf=1 m=1
-M17 p_not_i a_i c_i vss nfet_03v3 L=0.55u W=1.37u nf=1 m=1
-M18 p_not_i a_not_i c_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M19 c_i a_not_i p_i vss nfet_03v3 L=0.55u W=1.415u nf=1 m=1
-M20 c_i a_i p_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M21 p_i a_i c_not_i vss nfet_03v3 L=0.55u W=1.365u nf=1 m=1
-M22 p_i a_not_i c_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M23 c_not_i a_not_i p_not_i vss nfet_03v3 L=0.55u W=1.385u nf=1 m=1
-M24 c_not_i a_i p_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M25 q_not_i c_i s_i vss nfet_03v3 L=0.55u W=1.37u nf=1 m=1
-M26 q_not_i c_not_i s_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M27 s_i c_not_i q_i vss nfet_03v3 L=0.55u W=1.415u nf=1 m=1
-M28 s_i c_i q_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M29 q_i c_i s_not_i vss nfet_03v3 L=0.55u W=1.365u nf=1 m=1
-M30 q_i c_not_i s_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
-M31 s_not_i c_not_i q_not_i vss nfet_03v3 L=0.55u W=1.385u nf=1 m=1
-M32 s_not_i c_i q_not_i vdd pfet_03v3 L=0.5u W=1.235u nf=1 m=1
+.subckt nfet$1 a_n84_0# a_94_0# a_30_144# VSUBS
+X0 a_94_0# a_30_144# a_n84_0# VSUBS nfet_03v3 ad=0.2562p pd=2.06u as=0.2562p ps=2.06u w=0.42u l=0.28u
+.ends
+
+.subckt UMA a_319_1607# a_4705_1617# a_209_1277# a_3411_1607# a_n806_2017# a_n690_608#
++ pfet_7/VSUBS a_121_287# m1_n6688_1443# a_1613_1617# a_3213_287# w_n5735_1139# a_4164_1609#
++ a_n912_608#
+Xpfet_0 a_4164_1609# w_n5735_1139# a_209_1277# m1_n6688_1443# pfet
+Xpfet_1 a_3213_287# w_n5735_1139# m1_n4118_1708# a_209_1277# pfet
+Xpfet_2 a_121_287# w_n5735_1139# a_n690_608# m1_n4118_1708# pfet
+Xpfet_4 a_3213_287# w_n5735_1139# a_n912_608# m1_n2220_1708# pfet
+Xpfet_3 a_121_287# w_n5735_1139# m1_n2220_1708# m1_n6688_1443# pfet
+Xpfet_5 a_4164_1609# w_n5735_1139# a_n690_608# a_n912_608# pfet
+Xpfet_6 a_n806_2017# w_n5735_1139# a_209_1277# m1_n6688_1443# pfet
+Xpfet_7 a_n806_2017# w_n5735_1139# a_n690_608# a_n912_608# pfet
+Xnfet$1_0 a_209_1277# m1_n6688_1443# a_121_287# pfet_7/VSUBS nfet$1
+Xnfet$1_1 a_209_1277# m1_n6688_1443# a_3213_287# pfet_7/VSUBS nfet$1
+Xnfet$1_2 m1_n4123_608# a_209_1277# a_n806_2017# pfet_7/VSUBS nfet$1
+Xnfet$1_3 a_n690_608# m1_n4123_608# a_4164_1609# pfet_7/VSUBS nfet$1
+Xnfet$1_4 m1_n2298_608# m1_n6688_1443# a_4164_1609# pfet_7/VSUBS nfet$1
+Xnfet$1_5 a_n912_608# m1_n2298_608# a_n806_2017# pfet_7/VSUBS nfet$1
+Xnfet$1_6 a_n690_608# a_n912_608# a_3213_287# pfet_7/VSUBS nfet$1
+Xnfet$1_7 a_n690_608# a_n912_608# a_121_287# pfet_7/VSUBS nfet$1
+X0 a_n806_2017# a_n912_608# a_319_1607# w_n5735_1139# pfet_03v3 ad=0.60515p pd=3.45u as=0.6669p ps=3.55u w=1.235u l=0.5u
+X1 a_121_287# a_n912_608# a_1613_1617# w_n5735_1139# pfet_03v3 ad=0.70395p pd=3.61u as=0.6422p ps=3.51u w=1.235u l=0.5u
+X2 a_n806_2017# a_209_1277# a_319_1607# pfet_7/VSUBS nfet_03v3 ad=0.65797p pd=3.76u as=0.74287p ps=3.88u w=1.415u l=0.55u
+X3 a_319_1607# a_209_1277# a_121_287# w_n5735_1139# pfet_03v3 ad=0.6669p pd=3.55u as=0.60515p ps=3.45u w=1.235u l=0.5u
+X4 a_319_1607# a_n912_608# a_121_287# pfet_7/VSUBS nfet_03v3 ad=0.6576p pd=3.7u as=0.63705p ps=3.67u w=1.37u l=0.55u
+X5 a_1613_1617# a_209_1277# a_n806_2017# w_n5735_1139# pfet_03v3 ad=0.60515p pd=3.45u as=0.64837p ps=3.52u w=1.235u l=0.5u
+X6 a_3411_1607# a_1613_1617# a_3213_287# w_n5735_1139# pfet_03v3 ad=0.6669p pd=3.55u as=0.60515p ps=3.45u w=1.235u l=0.5u
+X7 a_4164_1609# a_319_1607# a_3411_1607# w_n5735_1139# pfet_03v3 ad=0.60515p pd=3.45u as=0.6669p ps=3.55u w=1.235u l=0.5u
+X8 a_3213_287# a_319_1607# a_4705_1617# w_n5735_1139# pfet_03v3 ad=0.70395p pd=3.61u as=0.6422p ps=3.51u w=1.235u l=0.5u
+X9 a_4705_1617# a_1613_1617# a_4164_1609# w_n5735_1139# pfet_03v3 ad=0.60515p pd=3.45u as=0.64837p ps=3.52u w=1.235u l=0.5u
+X10 a_121_287# a_209_1277# a_1613_1617# pfet_7/VSUBS nfet_03v3 ad=0.6925p pd=3.77u as=0.67172p ps=3.74u w=1.385u l=0.55u
+X11 a_4705_1617# a_319_1607# a_4164_1609# pfet_7/VSUBS nfet_03v3 ad=0.64155p pd=3.67u as=0.64837p ps=3.68u w=1.365u l=0.55u
+X12 a_4164_1609# a_1613_1617# a_3411_1607# pfet_7/VSUBS nfet_03v3 ad=0.65797p pd=3.76u as=0.74287p ps=3.88u w=1.415u l=0.55u
+X13 a_1613_1617# a_n912_608# a_n806_2017# pfet_7/VSUBS nfet_03v3 ad=0.64155p pd=3.67u as=0.64837p ps=3.68u w=1.365u l=0.55u
+X14 a_3213_287# a_1613_1617# a_4705_1617# pfet_7/VSUBS nfet_03v3 ad=0.6925p pd=3.77u as=0.67172p ps=3.74u w=1.385u l=0.55u
+X15 a_3411_1607# a_319_1607# a_3213_287# pfet_7/VSUBS nfet_03v3 ad=0.6576p pd=3.7u as=0.63705p ps=3.67u w=1.37u l=0.55u
+.ends
+
+.subckt x8b_FA vdd MAJ_7/a_551_708# UMA_7/a_1613_1617# UMA_4/a_4705_1617# MAJ_7/a_1502_2030#
++ MAJ_2/a_1502_2030# UMA_4/a_3411_1607# UMA_0/a_n690_608# MAJ_6/a_644_83# MAJ_2/a_644_83#
++ UMA_0/m1_n6688_1443# UMA_3/a_4705_1617# MAJ_6/a_1502_2030# MAJ_1/a_1502_2030# UMA_0/a_n912_608#
++ MAJ_7/a_3643_708# MAJ_0/m1_7413_2589# UMA_1/a_n912_608# UMA_3/a_3411_1607# MAJ_0/a_639_1698#
++ UMA_2/a_n912_608# MAJ_1/a_639_1698# UMA_3/a_n912_608# MAJ_2/a_639_1698# UMA_4/a_n912_608#
++ MAJ_0/a_551_708# MAJ_3/a_639_1698# UMA_5/a_n912_608# UMA_0/a_209_1277# MAJ_7/a_644_83#
++ MAJ_4/a_639_1698# MAJ_7/a_4594_2030# UMA_6/a_n912_608# UMA_1/a_209_1277# MAJ_5/a_639_1698#
++ UMA_7/a_4705_1617# UMA_7/a_n912_608# MAJ_3/a_644_83# UMA_2/a_4705_1617# UMA_2/a_209_1277#
++ MAJ_6/a_639_1698# MAJ_5/a_1502_2030# MAJ_1/a_551_708# MAJ_0/a_1502_2030# UMA_7/a_319_1607#
++ MAJ_7/a_639_1698# UMA_3/a_209_1277# UMA_7/a_3411_1607# UMA_4/a_209_1277# UMA_2/a_3411_1607#
++ UMA_5/a_209_1277# UMA_6/a_209_1277# MAJ_2/a_551_708# UMA_7/a_209_1277# UMA_6/a_4705_1617#
++ UMA_1/a_4705_1617# MAJ_3/a_551_708# MAJ_4/a_1502_2030# MAJ_4/a_644_83# MAJ_0/a_11429_1029#
++ UMA_6/a_3411_1607# MAJ_0/a_644_83# UMA_1/a_3411_1607# MAJ_4/a_551_708# MAJ_5/a_551_708#
++ UMA_5/a_4705_1617# UMA_0/a_4705_1617# MAJ_3/a_1502_2030# UMA_5/a_3411_1607# MAJ_6/a_551_708#
++ UMA_0/a_3411_1607# MAJ_5/a_644_83# MAJ_1/a_644_83# vss
+XMAJ_5 vdd MAJ_5/a_551_708# UMA_5/a_n806_2017# m1_52380_205569# m1_52140_206158# m1_52418_201623#
++ MAJ_5/a_639_1698# UMA_5/a_3213_287# MAJ_5/a_644_83# m1_52180_202214# UMA_5/a_121_287#
++ MAJ_5/a_1502_2030# vss MAJ_5/a_749_2028# MAJ
+XMAJ_6 vdd MAJ_6/a_551_708# UMA_6/a_n806_2017# m1_52379_209503# m1_52143_210093# m1_52380_205569#
++ MAJ_6/a_639_1698# UMA_6/a_3213_287# MAJ_6/a_644_83# m1_52140_206158# UMA_6/a_121_287#
++ MAJ_6/a_1502_2030# vss MAJ_6/a_749_2028# MAJ
+XMAJ_7 vdd MAJ_7/a_551_708# UMA_7/a_n806_2017# MAJ_7/a_4594_2030# MAJ_7/a_3643_708#
++ m1_52379_209503# MAJ_7/a_639_1698# UMA_7/a_3213_287# MAJ_7/a_644_83# m1_52143_210093#
++ UMA_7/a_121_287# MAJ_7/a_1502_2030# vss MAJ_7/a_749_2028# MAJ
+XUMA_0 m1_53747_186215# UMA_0/a_4705_1617# UMA_0/a_209_1277# UMA_0/a_3411_1607# UMA_0/a_n806_2017#
++ UMA_0/a_n690_608# vss UMA_0/a_121_287# UMA_0/m1_n6688_1443# m1_54160_186483# UMA_0/a_3213_287#
++ vdd MAJ_0/a_749_2028# UMA_0/a_n912_608# UMA
+XUMA_1 m1_53728_190208# UMA_1/a_4705_1617# UMA_1/a_209_1277# UMA_1/a_3411_1607# UMA_1/a_n806_2017#
++ m1_53747_186215# vss UMA_1/a_121_287# m1_54160_186483# m1_54140_190478# UMA_1/a_3213_287#
++ vdd MAJ_1/a_749_2028# UMA_1/a_n912_608# UMA
+XUMA_2 m1_53670_194145# UMA_2/a_4705_1617# UMA_2/a_209_1277# UMA_2/a_3411_1607# UMA_2/a_n806_2017#
++ m1_53728_190208# vss UMA_2/a_121_287# m1_54140_190478# m1_54085_194415# UMA_2/a_3213_287#
++ vdd MAJ_2/a_749_2028# UMA_2/a_n912_608# UMA
+XUMA_3 m1_53694_198104# UMA_3/a_4705_1617# UMA_3/a_209_1277# UMA_3/a_3411_1607# UMA_3/a_n806_2017#
++ m1_53670_194145# vss UMA_3/a_121_287# m1_54085_194415# m1_54109_198374# UMA_3/a_3213_287#
++ vdd MAJ_3/a_749_2028# UMA_3/a_n912_608# UMA
+XUMA_5 m1_53690_205990# UMA_5/a_4705_1617# UMA_5/a_209_1277# UMA_5/a_3411_1607# UMA_5/a_n806_2017#
++ m1_53694_202051# vss UMA_5/a_121_287# m1_54109_202321# m1_54107_206262# UMA_5/a_3213_287#
++ vdd MAJ_5/a_749_2028# UMA_5/a_n912_608# UMA
+XUMA_4 m1_53694_202051# UMA_4/a_4705_1617# UMA_4/a_209_1277# UMA_4/a_3411_1607# UMA_4/a_n806_2017#
++ m1_53694_198104# vss UMA_4/a_121_287# m1_54109_198374# m1_54109_202321# UMA_4/a_3213_287#
++ vdd MAJ_4/a_749_2028# UMA_4/a_n912_608# UMA
+XUMA_6 m1_53630_209933# UMA_6/a_4705_1617# UMA_6/a_209_1277# UMA_6/a_3411_1607# UMA_6/a_n806_2017#
++ m1_53690_205990# vss UMA_6/a_121_287# m1_54107_206262# m1_54045_210203# UMA_6/a_3213_287#
++ vdd MAJ_6/a_749_2028# UMA_6/a_n912_608# UMA
+XUMA_7 UMA_7/a_319_1607# UMA_7/a_4705_1617# UMA_7/a_209_1277# UMA_7/a_3411_1607# UMA_7/a_n806_2017#
++ m1_53630_209933# vss UMA_7/a_121_287# m1_54045_210203# UMA_7/a_1613_1617# UMA_7/a_3213_287#
++ vdd MAJ_7/a_749_2028# UMA_7/a_n912_608# UMA
+XMAJ_0 vdd MAJ_0/a_551_708# UMA_0/a_n806_2017# m1_52370_185794# m1_52134_186384# MAJ_0/a_11429_1029#
++ MAJ_0/a_639_1698# UMA_0/a_3213_287# MAJ_0/a_644_83# MAJ_0/m1_7413_2589# UMA_0/a_121_287#
++ MAJ_0/a_1502_2030# vss MAJ_0/a_749_2028# MAJ
+XMAJ_1 vdd MAJ_1/a_551_708# UMA_1/a_n806_2017# m1_52370_189756# m1_52134_190346# m1_52370_185794#
++ MAJ_1/a_639_1698# UMA_1/a_3213_287# MAJ_1/a_644_83# m1_52134_186384# UMA_1/a_121_287#
++ MAJ_1/a_1502_2030# vss MAJ_1/a_749_2028# MAJ
+XMAJ_2 vdd MAJ_2/a_551_708# UMA_2/a_n806_2017# m1_52351_193711# m1_52115_194301# m1_52370_189756#
++ MAJ_2/a_639_1698# UMA_2/a_3213_287# MAJ_2/a_644_83# m1_52134_190346# UMA_2/a_121_287#
++ MAJ_2/a_1502_2030# vss MAJ_2/a_749_2028# MAJ
+XMAJ_3 vdd MAJ_3/a_551_708# UMA_3/a_n806_2017# m1_52410_197656# m1_52170_198245# m1_52351_193711#
++ MAJ_3/a_639_1698# UMA_3/a_3213_287# MAJ_3/a_644_83# m1_52115_194301# UMA_3/a_121_287#
++ MAJ_3/a_1502_2030# vss MAJ_3/a_749_2028# MAJ
+XMAJ_4 vdd MAJ_4/a_551_708# UMA_4/a_n806_2017# m1_52418_201623# m1_52180_202214# m1_52410_197656#
++ MAJ_4/a_639_1698# UMA_4/a_3213_287# MAJ_4/a_644_83# m1_52170_198245# UMA_4/a_121_287#
++ MAJ_4/a_1502_2030# vss MAJ_4/a_749_2028# MAJ
+.ends
+
+.subckt fa16b_rev s15 s15_not s14 s14_not s13 s13_not s12 s12_not s11 s11_not s10
++ s10_not s4 s4_not s9 s9_not s3 s3_not s8 s8_not s2 s2_not s7 s7_not s1 s1_not s6
++ s6_not s0 s0_not s5 s5_not c15 c15_not vdd vss c0_b c0_b_not a7_not_b a7_b a6_not_b
++ a6_b a5_not_b a5_b a4_not_b a4_b a3_not_b a3_b a2_not_b a2_b a1_not_b a1_b a0_not_b
++ a0_b c0_f c0_f_not b7_not b7 a7_not_f a7_f b6_not b6 a6_not_f a6_f b5_not b5 a5_not_f
++ a5_f b4_not b4 a4_not_f a4_f b3_not b3 a3_not_f a3_f a0_f a0_not_f b0 b0_not b2_not
++ b2 a2_not_f a2_f b1_not b1 a1_not_f a1_f b14_not b14 a14_not_f a14_f b13_not b13
++ a13_not_f a13_f b12_not b12 a12_not_f a12_f b11_not b11 a11_not_f a11_f b10_not
++ b10 a10_not_f a10_f b9_not b9 a9_not_f a9_f b8_not b8 a8_not_f a8_f b15_not b15
++ a15_not_f a15_f a13_not_b a13_b a12_not_b a12_b a11_not_b a11_b a10_not_b a10_b
++ a9_not_b a9_b a8_not_b a8_b a15_not_b a15_b a14_not_b a14_b
+X8b_FA_0 8b_FA_0/vdd b8_not m1_12945_578# 8b_FA_0/UMA_4/a_4705_1617# b8 b13 8b_FA_0/UMA_4/a_3411_1607#
++ a_13565_n36782# a9_f a13_f a_13560_n35167# s12_not 8b_FA_0/MAJ_6/a_1502_2030# b14
++ a15_b m1_11125_463# a_13560_n35167# a14_b s12 8b_FA_0/MAJ_0/a_639_1698# a13_b a14_not_f
++ a12_b a13_not_f a11_b 8b_FA_0/MAJ_0/a_551_708# a12_not_f 8b_FA_0/UMA_5/a_n912_608#
++ a15_not_b a8_f a11_not_f m1_11465_n130# a9_b a14_not_b a10_not_f s8_not a8_b a12_f
++ s13_not a13_not_b a9_not_f b10 b14_not 8b_FA_0/MAJ_0/a_1502_2030# m1_12525_313#
++ a8_not_f a12_not_b s8 a11_not_b s13 a10_not_b a9_not_b b13_not a8_not_b s9_not s14_not
++ b12_not b11 a11_f a_13565_n36782# s9 8b_FA_0/MAJ_0/a_644_83# s14 b11_not b10_not
++ s10_not s15_not b12 8b_FA_0/UMA_5/a_3411_1607# 8b_FA_0/MAJ_6/a_551_708# s15 a10_f
++ 8b_FA_0/MAJ_1/a_644_83# vss x8b_FA
+X8b_FA_1 8b_FA_1/vdd b0_not 8b_FA_1/UMA_7/a_1613_1617# s3_not b0 b5 s3 m1_12525_313#
++ a1_f a5_f m1_12945_578# s4_not b1 b6 a7_b 8b_FA_1/MAJ_7/a_3643_708# m1_11125_463#
++ a6_b s4 a7_not_f a5_b a6_not_f a4_b a5_not_f a3_b b7_not a4_not_f a2_b a7_not_b
++ a0_f a3_not_f c0_f a1_b a6_not_b a2_not_f 8b_FA_1/UMA_7/a_4705_1617# a0_b a4_f 8b_FA_1/UMA_2/a_4705_1617#
++ a5_not_b a1_not_f b2 b6_not b7 8b_FA_1/UMA_7/a_319_1607# a0_not_f a4_not_b 8b_FA_1/UMA_7/a_3411_1607#
++ a3_not_b 8b_FA_1/UMA_2/a_3411_1607# a2_not_b a1_not_b b5_not a0_not_b s1_not s6_not
++ 8b_FA_1/MAJ_3/a_551_708# b3 8b_FA_1/MAJ_4/a_644_83# m1_11465_n130# s1 a7_f s6 b3_not
++ b2_not s2_not s7_not b4 s2 b1_not s7 a2_f a6_f vss x8b_FA
+X0 z a_13560_n35167# c15 vss nfet_03v3 ad=0.65797p pd=3.76u as=0.74287p ps=3.88u w=1.415u l=0.55u
+X1 c15 a_13560_n35167# z_not vdd pfet_03v3 ad=0.6669p pd=3.55u as=0.60515p ps=3.45u w=1.235u l=0.5u
+X2 z_not a_13565_n36782# c15_not vdd pfet_03v3 ad=0.70395p pd=3.61u as=0.6422p ps=3.51u w=1.235u l=0.5u
+X3 c15_not a_13565_n36782# z vss nfet_03v3 ad=0.64155p pd=3.67u as=0.64837p ps=3.68u w=1.365u l=0.55u
+X4 z_not a_13560_n35167# c15_not vss nfet_03v3 ad=0.6925p pd=3.77u as=0.67172p ps=3.74u w=1.385u l=0.55u
+X5 z a_13565_n36782# c15 vdd pfet_03v3 ad=0.60515p pd=3.45u as=0.6669p ps=3.55u w=1.235u l=0.5u
+X6 c15 a_13565_n36782# z_not vss nfet_03v3 ad=0.6576p pd=3.7u as=0.63705p ps=3.67u w=1.37u l=0.55u
+X7 c15_not a_13560_n35167# z vdd pfet_03v3 ad=0.60515p pd=3.45u as=0.64837p ps=3.52u w=1.235u l=0.5u
 .ends
 
