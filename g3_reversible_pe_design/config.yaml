@@ -1,21 +1,22 @@
-DESIGN_NAME: rd_5_32
+DESIGN_NAME: fa16_rev_wrapped
 
 VERILOG_FILES:
-  - dir::rd_5_32.sv
-  - dir::rd_2_4.sv
-  - dir::rd_3_8.sv
+  - dir::fa16_rev_wrapped.sv
 
 CLOCK_PORT: clk
 CLOCK_PERIOD: 25
 
 PRIMARY_GDSII_STREAMOUT_TOOL: klayout
 
+"PDN_MACRO_CONNECTIONS": [fa16_rev_wrapped vdd vss vdd vss]
+"VERILOG_POWER_DEFINE": USE_POWER_PINS
+"ERROR_ON_PDN_VIOLATIONS": false
+
 PNR_SDC_FILE: dir::constraints.sdc
 
 STD_CELL_LIBRARY: gf180mcu_fd_sc_mcu7t5v0
 TECH_LEFS: 
     "nom_*": "pdk_dir::libs.ref/gf180mcu_fd_sc_mcu7t5v0/techlef/gf180mcu_fd_sc_mcu7t5v0__nom.tlef"
-
 
 # PDK / stdcell library–specific settings
 pdk::gf180mcuD:
@@ -31,7 +32,23 @@ pdk::gf180mcuD:
         - "pdk_dir::libs.ref/gf180mcu_fd_sc_mcu7t5v0/lib/gf180mcu_fd_sc_mcu7t5v0__tt_025C_3v30.lib"
 
 # Pin Order
-FP_PIN_ORDER_CFG: dir::pin_order.cfg
+# FP_PIN_ORDER_CFG: dir::pin_order.cfg
+
+MACROS:
+  fa16b_rev:
+    gds:
+      - dir::../custom_ip/g3_reversible_pe/16b_FA/fa16b_rev.gds
+    lef:
+      - dir::../custom_ip/g3_reversible_pe/16b_FA/fa16b_rev.lef
+    vh:
+      - dir::../custom_ip/g3_reversible_pe/16b_FA/fa16b_rev.v
+    lib:
+      "*_tt_025C_3v30":
+        - dir::../custom_ip/g3_reversible_pe/16b_FA/fa16b_rev.lib
+    instances:
+      fa16b_0:
+        location: [60, 60]
+        orientation: N
 
 # Pin metal layer
 FP_IO_HLAYER: "Metal3"
@@ -39,5 +56,5 @@ FP_IO_HEXTEND: 2.0
 
 # Area
 FP_SIZING: absolute
-DIE_AREA: [0, 0, 60, 180]
-CORE_AREA: [0, 0, 60, 180]
+DIE_AREA: [0, 0, 180, 180]
+CORE_AREA: [0, 0, 180, 180]
